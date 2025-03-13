@@ -309,7 +309,6 @@ const RecipientDisplay: React.FC = () => {
         } else {
           setError(`Failed to get recipients: ${asyncResult.error.message}`);
         }
-        // Don't set loading=false here as we're still loading customer data
       });
     } catch (err) {
       setError(err.message || "Failed to get recipient information");
@@ -318,7 +317,6 @@ const RecipientDisplay: React.FC = () => {
     }
   };
 
-  // Keep track of initialization state to avoid flashing
   const [initialized, setInitialized] = useState(false);
 
   // Combined initialization effect
